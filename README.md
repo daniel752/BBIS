@@ -1,6 +1,6 @@
 # BBIS Hide and Extract
 
-BBIS Hide and Extract is a Python project designed to hide and extract data within executables using the Binary-Based Instruction Substitution (BBIS) technique. This project includes two scripts: `bbis_hide.py` for hiding data within executables and `bbis_extract.py` for extracting hidden data from executables.
+BBIS Hide and Extract is a Python PoC (Proof-of-Concept) project designed to hide and extract data within executables using the Binary-Based Instruction Substitution (BBIS) technique. This project includes two scripts: `bbis_hide.py` for hiding data within executables and `bbis_extract.py` for extracting hidden data from executables.
 
 ## Features
 
