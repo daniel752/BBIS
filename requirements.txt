@@ -1,0 +1,7 @@
+argparse~=1.4.0
+python-magic~=0.4.27; platform_system=="Linux" or platform_system=="Darwin"
+python-magic-bin~=0.4.14; platform_system=="Windows"
+pip~=23.0.1
+pyparsing~=3.0.9
+setuptools~=65.5.0
+wheel~=0.40.0
