@@ -5,14 +5,13 @@ import os
 import time
 import argparse
 
-from opcode_map_db import target_map,decode_opcode_map_0_to_1,decode_opcode_map_1_to_0
-
+from opcode_map_db import target_map, decode_opcode_map_0_to_1, decode_opcode_map_1_to_0
 
 map_dict = \
-{
-    0: decode_opcode_map_1_to_0,
-    1: decode_opcode_map_0_to_1
-}
+    {
+        0: decode_opcode_map_1_to_0,
+        1: decode_opcode_map_0_to_1
+    }
 
 
 def get_arguments_cli():
@@ -20,7 +19,7 @@ def get_arguments_cli():
     parser = argparse.ArgumentParser(prog='bbis_hide.py',
                                      description='Python script to decode\extract data within executable file.')
     # parser.add_argument('-a', '--action', type=str, required=True, help='-a or --action [=decode,=extract] (choose whether you want to decode or extract data)')
-    parser.add_argument('-f', '--file', type=str, required=True, help='Path to file to hide in executable')
+    parser.add_argument('-d', '--data', type=str, required=True, help='Path to data (file) to hide in executable')
     parser.add_argument('-e', '--executable', type=str, required=True, help='Path to executable to hide file within')
     return parser.parse_args()
 
@@ -37,7 +36,7 @@ def get_file_binary_data(file):
 
 def get_executable_binary(executable):
     """Reads executable and returns binary data as bytearray"""
-    return bytearray(open(executable,'rb').read())
+    return bytearray(open(executable, 'rb').read())
 
 
 def get_executable_object_data(executable):
@@ -71,7 +70,8 @@ def get_target_mnemonics(mnemonic_list):
 
 def calculate_offsets(target_list, virtual_offset, code_offset):
     """Calculates for every target mnemonic it's real offset from virtual offset and returns a list"""
-    offsets = [(int(hex((int(x[0][:-1], 16) - int(virtual_offset, 16)) + int(code_offset, 16)), 16), x[1]) for x in target_list]
+    offsets = [(int(hex((int(x[0][:-1], 16) - int(virtual_offset, 16)) + int(code_offset, 16)), 16), x[1]) for x in
+               target_list]
 
     # For debugging purposes
     # with open("offsets-list.txt","w") as file:
@@ -99,7 +99,7 @@ def get_executable_offsets(executable):
 def get_opcode_conversion(opcode, param):
     """Converts opcodes based on their value in map and 'param'. If 'param' is 0 and opcode value in map is 1 then
     it will convert it to it's equal opcode that has value of 0 in map."""
-    return int(map_dict.get(param).get(opcode).split()[0]),int(map_dict.get(param).get(opcode).split()[1])
+    return int(map_dict.get(param).get(opcode).split()[0]), int(map_dict.get(param).get(opcode).split()[1])
 
 
 def decode_data_within_executable(buffer, binary_data, offsets):
@@ -117,19 +117,19 @@ def decode_data_within_executable(buffer, binary_data, offsets):
             # Current offset from offset list
             offset = offsets[j]
             # Current opcode (all targeted mnemonics are 2 bytes)
-            opcode = f'{buffer[offset]} {buffer[offset+1]}'
+            opcode = f'{buffer[offset]} {buffer[offset + 1]}'
             # print(f"Offset:{offset}; opcode:{opcode}; bit:{bit}; index:{j}")
             if bit == '1':
                 # If current bit is 1 check whether current opcode gives value of 0 in map
                 if opcode in decode_opcode_map_0_to_1:
                     # Substitute opcode with another one that equals 1 in map
-                    buffer[offset],buffer[offset+1] = get_opcode_conversion(opcode,1)
+                    buffer[offset], buffer[offset + 1] = get_opcode_conversion(opcode, 1)
                     # print(f"Converted to: {buffer[offset]} {buffer[offset+1]} => 1")
             elif bit == '0':
                 # If current bit is 0 check whether current opcode gives value of 1 in map
                 if opcode in decode_opcode_map_1_to_0:
                     # Substitute opcode with another one that equals 0 in map
-                    buffer[offset],buffer[offset+1] = get_opcode_conversion(opcode,0)
+                    buffer[offset], buffer[offset + 1] = get_opcode_conversion(opcode, 0)
                     # print(f"Converted to: {buffer[offset]} {buffer[offset + 1]} =>0")
             i += 1
             j += 1
@@ -146,9 +146,9 @@ def decode_data_within_executable(buffer, binary_data, offsets):
     return buffer
 
 
-def write_buffer(buffer,executable):
+def write_buffer(buffer, executable):
     """Write buffer back to hard-disk (physical memory) in current directory"""
-    with open(f"{executable}","wb") as file:
+    with open(f"{executable}", "wb") as file:
         file.write(buffer)
 
 
@@ -163,18 +163,18 @@ def modify_buffer(buffer, binary_data, offsets_list):
     # The first 32-bits are saved to mark the start and end of data
     # start_binary = '0' * (16 - len(bin(offsets[32])[2:])) + bin(offsets[32])[2:]
     try:
-        end_binary = '0' * (16 - len(bin(offsets[len(binary_data)+15])[2:])) + bin(offsets[len(binary_data)+15])[2:]
+        end_binary = '0' * (16 - len(bin(offsets[len(binary_data) + 15])[2:])) + bin(offsets[len(binary_data) + 15])[2:]
     except IndexError:
         print(f"Not enough offsets to decode bits with, need executable with bigger code section")
         print(f"Program exits")
         exit()
 
     # print(f"Start offset: {int(start_binary,2)}")
-    print(f"End offset: {int(end_binary,2)}")
+    # print(f"End offset: {int(end_binary, 2)}")
     # Concatenate binary end mark with binary data
     full_binary_data = end_binary + binary_data
     # Decode 'full_binary_data' within executable file
-    decode_data_within_executable(buffer,full_binary_data,offsets)
+    decode_data_within_executable(buffer, full_binary_data, offsets)
     return buffer
 
 
@@ -189,20 +189,20 @@ if __name__ == '__main__':
     # # Action to perform (to hide or extract data)
     # action = args.action
     # Path to file for hiding or extracting
-    file = args.file
+    data = args.data
     # Path to executable file
     executable = args.executable
     # Get targeted mnemonics offsets from executable's object data
     offsets_list = get_executable_offsets(executable)
     # Get file's binary data
-    binary_data = get_file_binary_data(file)
+    binary_data = get_file_binary_data(data)
     # Load executable's data into buffer
     buffer = get_executable_binary(executable)
     # Modify buffer according to 'binary_data'
-    buffer = modify_buffer(buffer,binary_data,offsets_list)
+    buffer = modify_buffer(buffer, binary_data, offsets_list)
     # Get executable's name from path
     exe_name = os.path.basename(executable)
     # Write modified buffer back to hard-disk (looks exactly like original)
-    write_buffer(buffer,exe_name)
+    write_buffer(buffer, exe_name)
     # Delete executable's object data logs
     clear_logs(exe_name)
