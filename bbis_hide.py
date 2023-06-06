@@ -8,10 +8,10 @@ import argparse
 from opcode_map_db import target_map, decode_opcode_map_0_to_1, decode_opcode_map_1_to_0
 
 map_dict = \
-    {
-        0: decode_opcode_map_1_to_0,
-        1: decode_opcode_map_0_to_1
-    }
+{
+    0: decode_opcode_map_1_to_0,
+    1: decode_opcode_map_0_to_1
+}
 
 
 def get_arguments_cli():
