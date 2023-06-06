@@ -1,0 +1,26 @@
+name: BBIS - Run & Test
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Run bbis_hide.py
+      run: python bbis_hide.py -d testing/test.txt -e testing/HxDSetup.exe
+    - name: Run bbis_extract.py
+      run: python bbis_extract.py -e HxDSetup.exe
+    - name: Display test files
+      run: cat testing/test.txt && cat output-file.txt
+    - name: Check output file
+      run: if ! diff -q testing/test.txt output-file.txt >/dev/null 2>&1; then echo "Output file is not the same as original, test failed"; exit 1; fi
