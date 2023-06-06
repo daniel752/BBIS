@@ -42,9 +42,9 @@ To hide data within an executable file, follow these steps:
 3. Run the following command:
    
    ```shell
-   python bbis_hide.py -e /path/to/executable -d /path/to/data -o /path/to/output
-
-Replace /path/to/executable with the actual path to the executable file you want to hide data in, /path/to/data with the path to the data file you want to hide, and /path/to/output with the desired output file path.
+   python bbis_hide.py -e /path/to/executable -d /path/to/data
+   
+Replace /path/to/executable with the actual path to the executable file you want to hide data in, and /path/to/data with the path to the data file you want to hide.
 The script will modify the provided executable file to embed the data within it and save the modified executable as the output file.
 
 ### Extracting Hidden Data from Executables
@@ -55,11 +55,11 @@ To extract hidden data from an executable file, follow these steps:
 3. Run the following command:
    
    ```shell
-   python bbis_extract.py -e /path/to/executable
+   python bbis_extract.py -e /path/to/executable -o /path/to/output
    
-Replace `/path/to/executable` with the actual path to the executable file you want to extract data from.
+Replace `/path/to/executable` with the actual path to the executable file you want to extract data from, and `/path/to/output` to your output location or name in case you want (it's optional).
 
-The extracted file will be saved as `output-file.{file_type}` in the current directory, where `{file_type}` represents the detected file type of the extracted data.
+The extracted file will be saved as `output-file.{file_type}` in the current directory if output is not specified, where `{file_type}` represents the detected file type of the extracted data.
 
 ## Contributing
 Contributions to BBIS Hide and Extract are welcome! If you encounter any issues or have suggestions for improvements, please feel free to submit a pull request or create an issue on the repository.
