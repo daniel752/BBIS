@@ -72,9 +72,9 @@ def calculate_offsets(target_list, virtual_offset, code_offset):
     offsets = [(int(x[0][:-1],16) - int(virtual_offset,16) + int(code_offset,16), x[1]) for x in target_list]
 
     # For debugging purposes
-    with open("offsets-list.txt","w") as file:
-        for offset in offsets:
-            file.write(f"{offset}\n")
+    # with open("offsets-list.txt","w") as file:
+    #     for offset in offsets:
+    #         file.write(f"{offset}\n")
 
     return offsets
     # return [(int(hex((int(x[0][:-1], 16) - int(virtual_offset, 16)) + int(code_offset, 16)), 16), x[1]) for x in target_list]
@@ -115,19 +115,19 @@ def decode_data_within_executable(buffer, binary_data, offsets):
             offset = offsets[i]
             # Current opcode (all targeted mnemonics are 2 bytes)
             opcode = f'{buffer[offset]} {buffer[offset + 1]}'
-            print(f"Offset:{offset}; opcode:{opcode}; bit:{bit}; index:{i}")
+            # print(f"Offset:{offset}; opcode:{opcode}; bit:{bit}; index:{i}")
             if bit == '1':
                 # If current bit is 1 check whether current opcode gives value of 0 in map
                 if opcode in decode_opcode_map_0_to_1:
                     # Substitute opcode with another one that equals 1 in map
                     buffer[offset], buffer[offset + 1] = get_opcode_conversion(opcode, 1)
-                    print(f"Converted to: {buffer[offset]} {buffer[offset+1]} => 1")
+                    # print(f"Converted to: {buffer[offset]} {buffer[offset+1]} => 1")
             elif bit == '0':
                 # If current bit is 0 check whether current opcode gives value of 1 in map
                 if opcode in decode_opcode_map_1_to_0:
                     # Substitute opcode with another one that equals 0 in map
                     buffer[offset], buffer[offset + 1] = get_opcode_conversion(opcode, 0)
-                    print(f"Converted to: {buffer[offset]} {buffer[offset + 1]} => 0")
+                    # print(f"Converted to: {buffer[offset]} {buffer[offset + 1]} => 0")
             i += 1
     except IndexError:
         print('The code section in this executable is not enough to hide this message.')
