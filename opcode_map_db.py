@@ -512,70 +512,70 @@ target_map = \
     '03fe',  # ADD EDI,ESI
     '01ff',  # ADD EDI,EDI
     '03ff',  # ADD EDI,EDI
-    '00e4',  # ADD AH,AH
-    '02e4',  # ADD AH,AH
-    '00fc',  # ADD AH,BH
-    '02e7',  # ADD AH,BH
-    '00ec',  # ADD AH,CH
-    '02e5',  # ADD AH,CH
-    '00f4',  # ADD AH,DH
-    '02e6',  # ADD AH,DH
-    '00e7',  # ADD BH,AH
-    '02fc',  # ADD BH,AH
-    '00ff',  # ADD BH,BH
-    '02ff',  # ADD BH,BH
-    '00ef',  # ADD BH,CH
-    '02fd',  # ADD BH,CH
-    '00f7',  # ADD BH,DH
-    '02fe',  # ADD BH,DH
-    '00e5',  # ADD CH,AH
-    '02ec',  # ADD CH,AH
-    '00fd',  # ADD CH,BH
-    '02ef',  # ADD CH,BH
-    '00ed',  # ADD CH,CH
-    '02ed',  # ADD CH,CH
-    '00f5',  # ADD CH,DH
-    '02ee',  # ADD CH,DH
-    '00e6',  # ADD DH,AH
-    '02f4',  # ADD DH,AH
-    '00fe',  # ADD DH,BH
-    '02f7',  # ADD DH,BH
-    '00ee',  # ADD DH,CH
-    '02f5',  # ADD DH,CH
-    '00f6',  # ADD DH,DH
-    '02f6',  # ADD DH,DH
-    '00c0',  # ADD AL,AL
-    '02c0',  # ADD AL,AL
-    '00d8',  # ADD AL,BL
-    '02c3',  # ADD AL,BL
-    '00c8',  # ADD AL,CL
-    '02c1',  # ADD AL,CL
-    '00d0',  # ADD AL,DL
-    '02c2',  # ADD AL,DL
-    '00c3',  # ADD BL,AL
-    '02d8',  # ADD BL,AL
-    '00db',  # ADD BL,BL
-    '02db',  # ADD BL,BL
-    '00cb',  # ADD BL,CL
-    '02d9',  # ADD BL,CL
-    '00d3',  # ADD BL,DL
-    '02da',  # ADD BL,DL
-    '00c1',  # ADD CL,AL
-    '02c8',  # ADD CL,AL
-    '00d9',  # ADD CL,BL
-    '02cb',  # ADD CL,BL
-    '00c9',  # ADD CL,CL
-    '02c9',  # ADD CL,CL
-    '00d1',  # ADD CL,DL
-    '02ca',  # ADD CL,DL
-    '00c2',  # ADD DL,AL
-    '02d0',  # ADD DL,AL
-    '00da',  # ADD DL,BL
-    '02d3',  # ADD DL,BL
-    '00ca',  # ADD DL,CL
-    '02d1',  # ADD DL,CL
-    '00d2',  # ADD DL,DL
-    '02d2',  # ADD DL,DL
+    # '00e4',  # ADD AH,AH
+    # '02e4',  # ADD AH,AH
+    # '00fc',  # ADD AH,BH
+    # '02e7',  # ADD AH,BH
+    # '00ec',  # ADD AH,CH
+    # '02e5',  # ADD AH,CH
+    # '00f4',  # ADD AH,DH
+    # '02e6',  # ADD AH,DH
+    # '00e7',  # ADD BH,AH
+    # '02fc',  # ADD BH,AH
+    # '00ff',  # ADD BH,BH
+    # '02ff',  # ADD BH,BH
+    # '00ef',  # ADD BH,CH
+    # '02fd',  # ADD BH,CH
+    # '00f7',  # ADD BH,DH
+    # '02fe',  # ADD BH,DH
+    # '00e5',  # ADD CH,AH
+    # '02ec',  # ADD CH,AH
+    # '00fd',  # ADD CH,BH
+    # '02ef',  # ADD CH,BH
+    # '00ed',  # ADD CH,CH
+    # '02ed',  # ADD CH,CH
+    # '00f5',  # ADD CH,DH
+    # '02ee',  # ADD CH,DH
+    # '00e6',  # ADD DH,AH
+    # '02f4',  # ADD DH,AH
+    # '00fe',  # ADD DH,BH
+    # '02f7',  # ADD DH,BH
+    # '00ee',  # ADD DH,CH
+    # '02f5',  # ADD DH,CH
+    # '00f6',  # ADD DH,DH
+    # '02f6',  # ADD DH,DH
+    # '00c0',  # ADD AL,AL
+    # '02c0',  # ADD AL,AL
+    # '00d8',  # ADD AL,BL
+    # '02c3',  # ADD AL,BL
+    # '00c8',  # ADD AL,CL
+    # '02c1',  # ADD AL,CL
+    # '00d0',  # ADD AL,DL
+    # '02c2',  # ADD AL,DL
+    # '00c3',  # ADD BL,AL
+    # '02d8',  # ADD BL,AL
+    # '00db',  # ADD BL,BL
+    # '02db',  # ADD BL,BL
+    # '00cb',  # ADD BL,CL
+    # '02d9',  # ADD BL,CL
+    # '00d3',  # ADD BL,DL
+    # '02da',  # ADD BL,DL
+    # '00c1',  # ADD CL,AL
+    # '02c8',  # ADD CL,AL
+    # '00d9',  # ADD CL,BL
+    # '02cb',  # ADD CL,BL
+    # '00c9',  # ADD CL,CL
+    # '02c9',  # ADD CL,CL
+    # '00d1',  # ADD CL,DL
+    # '02ca',  # ADD CL,DL
+    # '00c2',  # ADD DL,AL
+    # '02d0',  # ADD DL,AL
+    # '00da',  # ADD DL,BL
+    # '02d3',  # ADD DL,BL
+    # '00ca',  # ADD DL,CL
+    # '02d1',  # ADD DL,CL
+    # '00d2',  # ADD DL,DL
+    # '02d2',  # ADD DL,DL
     '11c0',  # ADC EAX,EAX
     '13c0',  # ADC EAX,EAX
     '11d8',  # ADC EAX,EBX
@@ -2046,38 +2046,38 @@ decode_opcode_map_0_to_1 = \
     '1 239': '3 253',  # ADD EDI,EBP => same
     '1 247': '3 254',  # ADD EDI,ESI => same
     '1 255': '3 255',  # ADD EDI,EDI => same
-    '0 228': '2 228',  # ADD AH,AH => same
-    '0 252': '2 231',  # ADD AH,BH => same
-    '0 236': '2 229',  # ADD AH,CH => same
-    '0 244': '2 230',  # ADD AH,DH => same
-    '0 231': '2 252',  # ADD BH,AH => same
-    '0 255': '2 255',  # ADD BH,BH => same
-    '0 239': '2 253',  # ADD BH,CH => same
-    '0 247': '2 254',  # ADD BH,DH => same
-    '0 229': '2 236',  # ADD CH,AH => same
-    '0 253': '2 239',  # ADD CH,BH => same
-    '0 237': '2 237',  # ADD CH,CH => same
-    '0 245': '2 238',  # ADD CH,DH => same
-    '0 230': '2 244',  # ADD DH,AH => same
-    '0 254': '2 247',  # ADD DH,BH => same
-    '0 238': '2 245',  # ADD DH,CH => same
-    '0 246': '2 246',  # ADD DH,DH => same
-    '0 192': '2 192',  # ADD AL,AL => same
-    '0 216': '2 195',  # ADD AL,BL => same
-    '0 200': '2 193',  # ADD AL,CL => same
-    '0 208': '2 194',  # ADD AL,DL => same
-    '0 195': '2 216',  # ADD BL,AL => same
-    '0 219': '2 219',  # ADD BL,BL => same
-    '0 203': '2 217',  # ADD BL,CL => same
-    '0 211': '2 218',  # ADD BL,DL => same
-    '0 193': '2 200',  # ADD CL,AL => same
-    '0 217': '2 203',  # ADD CL,BL => same
-    '0 201': '2 201',  # ADD CL,CL => same
-    '0 209': '2 202',  # ADD CL,DL => same
-    '0 194': '2 208',  # ADD DL,AL => same
-    '0 218': '2 211',  # ADD DL,BL => same
-    '0 202': '2 209',  # ADD DL,CL => same
-    '0 210': '2 210',  # ADD DL,DL => same
+    # '0 228': '2 228',  # ADD AH,AH => same
+    # '0 252': '2 231',  # ADD AH,BH => same
+    # '0 236': '2 229',  # ADD AH,CH => same
+    # '0 244': '2 230',  # ADD AH,DH => same
+    # '0 231': '2 252',  # ADD BH,AH => same
+    # '0 255': '2 255',  # ADD BH,BH => same
+    # '0 239': '2 253',  # ADD BH,CH => same
+    # '0 247': '2 254',  # ADD BH,DH => same
+    # '0 229': '2 236',  # ADD CH,AH => same
+    # '0 253': '2 239',  # ADD CH,BH => same
+    # '0 237': '2 237',  # ADD CH,CH => same
+    # '0 245': '2 238',  # ADD CH,DH => same
+    # '0 230': '2 244',  # ADD DH,AH => same
+    # '0 254': '2 247',  # ADD DH,BH => same
+    # '0 238': '2 245',  # ADD DH,CH => same
+    # '0 246': '2 246',  # ADD DH,DH => same
+    # '0 192': '2 192',  # ADD AL,AL => same
+    # '0 216': '2 195',  # ADD AL,BL => same
+    # '0 200': '2 193',  # ADD AL,CL => same
+    # '0 208': '2 194',  # ADD AL,DL => same
+    # '0 195': '2 216',  # ADD BL,AL => same
+    # '0 219': '2 219',  # ADD BL,BL => same
+    # '0 203': '2 217',  # ADD BL,CL => same
+    # '0 211': '2 218',  # ADD BL,DL => same
+    # '0 193': '2 200',  # ADD CL,AL => same
+    # '0 217': '2 203',  # ADD CL,BL => same
+    # '0 201': '2 201',  # ADD CL,CL => same
+    # '0 209': '2 202',  # ADD CL,DL => same
+    # '0 194': '2 208',  # ADD DL,AL => same
+    # '0 218': '2 211',  # ADD DL,BL => same
+    # '0 202': '2 209',  # ADD DL,CL => same
+    # '0 210': '2 210',  # ADD DL,DL => same
     '17 192': '19 192',  # ADC EAX,EAX => same
     '17 216': '19 195',  # ADC EAX,EBX => same
     '17 200': '19 193',  # ADC EAX,ECX => same
@@ -2944,38 +2944,38 @@ decode_opcode_map_1_to_0 = \
     '3 253': '1 239',  # ADD EDI,EBP => same
     '3 254': '1 247',  # ADD EDI,ESI => same
     '3 255': '1 255',  # ADD EDI,EDI => same
-    '2 228': '0 228',  # ADD AH,AH => same
-    '2 231': '0 252',  # ADD AH,BH => same
-    '2 229': '0 236',  # ADD AH,CH => same
-    '2 230': '0 244',  # ADD AH,DH => same
-    '2 252': '0 231',  # ADD BH,AH => same
-    '2 255': '0 255',  # ADD BH,BH => same
-    '2 253': '0 239',  # ADD BH,CH => same
-    '2 254': '0 247',  # ADD BH,DH => same
-    '2 236': '0 229',  # ADD CH,AH => same
-    '2 239': '0 253',  # ADD CH,BH => same
-    '2 237': '0 237',  # ADD CH,CH => same
-    '2 238': '0 245',  # ADD CH,DH => same
-    '2 244': '0 230',  # ADD DH,AH => same
-    '2 247': '0 254',  # ADD DH,BH => same
-    '2 245': '0 238',  # ADD DH,CH => same
-    '2 246': '0 246',  # ADD DH,DH => same
-    '2 192': '0 192',  # ADD AL,AL => same
-    '2 195': '0 216',  # ADD AL,BL => same
-    '2 193': '0 200',  # ADD AL,CL => same
-    '2 194': '0 208',  # ADD AL,DL => same
-    '2 216': '0 195',  # ADD BL,AL => same
-    '2 219': '0 219',  # ADD BL,BL => same
-    '2 217': '0 203',  # ADD BL,CL => same
-    '2 218': '0 211',  # ADD BL,DL => same
-    '2 200': '0 193',  # ADD CL,AL => same
-    '2 203': '0 217',  # ADD CL,BL => same
-    '2 201': '0 201',  # ADD CL,CL => same
-    '2 202': '0 209',  # ADD CL,DL => same
-    '2 208': '0 194',  # ADD DL,AL => same
-    '2 211': '0 218',  # ADD DL,BL => same
-    '2 209': '0 202',  # ADD DL,CL => same
-    '2 210': '0 210',  # ADD DL,DL => same
+    # '2 228': '0 228',  # ADD AH,AH => same
+    # '2 231': '0 252',  # ADD AH,BH => same
+    # '2 229': '0 236',  # ADD AH,CH => same
+    # '2 230': '0 244',  # ADD AH,DH => same
+    # '2 252': '0 231',  # ADD BH,AH => same
+    # '2 255': '0 255',  # ADD BH,BH => same
+    # '2 253': '0 239',  # ADD BH,CH => same
+    # # '2 254': '0 247',  # ADD BH,DH => same
+    # '2 236': '0 229',  # ADD CH,AH => same
+    # '2 239': '0 253',  # ADD CH,BH => same
+    # '2 237': '0 237',  # ADD CH,CH => same
+    # '2 238': '0 245',  # ADD CH,DH => same
+    # '2 244': '0 230',  # ADD DH,AH => same
+    # '2 247': '0 254',  # ADD DH,BH => same
+    # '2 245': '0 238',  # ADD DH,CH => same
+    # '2 246': '0 246',  # ADD DH,DH => same
+    # '2 192': '0 192',  # ADD AL,AL => same
+    # '2 195': '0 216',  # ADD AL,BL => same
+    # '2 193': '0 200',  # ADD AL,CL => same
+    # '2 194': '0 208',  # ADD AL,DL => same
+    # '2 216': '0 195',  # ADD BL,AL => same
+    # '2 219': '0 219',  # ADD BL,BL => same
+    # '2 217': '0 203',  # ADD BL,CL => same
+    # '2 218': '0 211',  # ADD BL,DL => same
+    # '2 200': '0 193',  # ADD CL,AL => same
+    # '2 203': '0 217',  # ADD CL,BL => same
+    # '2 201': '0 201',  # ADD CL,CL => same
+    # '2 202': '0 209',  # ADD CL,DL => same
+    # '2 208': '0 194',  # ADD DL,AL => same
+    # '2 211': '0 218',  # ADD DL,BL => same
+    # '2 209': '0 202',  # ADD DL,CL => same
+    # '2 210': '0 210',  # ADD DL,DL => same
     '19 192': '17 192',  # ADC EAX,EAX => same
     '19 195': '17 216',  # ADC EAX,EBX => same
     '19 193': '17 200',  # ADC EAX,ECX => same
@@ -4098,70 +4098,70 @@ extraction_opcode_map = \
     '3 254': '1',  # ADD EDI,ESI => 1
     '1 255': '0',  # ADD EDI,EDI => 0
     '3 255': '1',  # ADD EDI,EDI => 1
-    '0 228': '0',  # ADD AH,AH => 0
-    '2 228': '1',  # ADD AH,AH => 1
-    '0 252': '0',  # ADD AH,BH => 0
-    '2 231': '1',  # ADD AH,BH => 1
-    '0 236': '0',  # ADD AH,CH => 0
-    '2 229': '1',  # ADD AH,CH => 1
-    '0 244': '0',  # ADD AH,DH => 0
-    '2 230': '1',  # ADD AH,DH => 1
-    '0 231': '0',  # ADD BH,AH => 0
-    '2 252': '1',  # ADD BH,AH => 1
-    '0 255': '0',  # ADD BH,BH => 0
-    '2 255': '1',  # ADD BH,BH => 1
-    '0 239': '0',  # ADD BH,CH => 0
-    '2 253': '1',  # ADD BH,CH => 1
-    '0 247': '0',  # ADD BH,DH => 0
-    '2 254': '1',  # ADD BH,DH => 1
-    '0 229': '0',  # ADD CH,AH => 0
-    '2 236': '1',  # ADD CH,AH => 1
-    '0 253': '0',  # ADD CH,BH => 0
-    '2 239': '1',  # ADD CH,BH => 1
-    '0 237': '0',  # ADD CH,CH => 0
-    '2 237': '1',  # ADD CH,CH => 1
-    '0 245': '0',  # ADD CH,DH => 0
-    '2 238': '1',  # ADD CH,DH => 1
-    '0 230': '0',  # ADD DH,AH => 0
-    '2 244': '1',  # ADD DH,AH => 1
-    '0 254': '0',  # ADD DH,BH => 0
-    '2 247': '1',  # ADD DH,BH => 1
-    '0 238': '0',  # ADD DH,CH => 0
-    '2 245': '1',  # ADD DH,CH => 1
-    '0 246': '0',  # ADD DH,DH => 0
-    '2 246': '1',  # ADD DH,DH => 1
-    '0 192': '0',  # ADD AL,AL => 0
-    '2 192': '1',  # ADD AL,AL => 1
-    '0 216': '0',  # ADD AL,BL => 0
-    '2 195': '1',  # ADD AL,BL => 1
-    '0 200': '0',  # ADD AL,CL => 0
-    '2 193': '1',  # ADD AL,CL => 1
-    '0 208': '0',  # ADD AL,DL => 0
-    '2 194': '1',  # ADD AL,DL => 1
-    '0 195': '0',  # ADD BL,AL => 0
-    '2 216': '1',  # ADD BL,AL => 1
-    '0 219': '0',  # ADD BL,BL => 0
-    '2 219': '1',  # ADD BL,BL => 1
-    '0 203': '0',  # ADD BL,CL => 0
-    '2 217': '1',  # ADD BL,CL => 1
-    '0 211': '0',  # ADD BL,DL => 0
-    '2 218': '1',  # ADD BL,DL => 1
-    '0 193': '0',  # ADD CL,AL => 0
-    '2 200': '1',  # ADD CL,AL => 1
-    '0 217': '0',  # ADD CL,BL => 0
-    '2 203': '1',  # ADD CL,BL => 1
-    '0 201': '0',  # ADD CL,CL => 0
-    '2 201': '1',  # ADD CL,CL => 1
-    '0 209': '0',  # ADD CL,DL => 0
-    '2 202': '1',  # ADD CL,DL => 1
-    '0 194': '0',  # ADD DL,AL => 0
-    '2 208': '1',  # ADD DL,AL => 1
-    '0 218': '0',  # ADD DL,BL => 0
-    '2 211': '1',  # ADD DL,BL => 1
-    '0 202': '0',  # ADD DL,CL => 0
-    '2 209': '1',  # ADD DL,CL => 1
-    '0 210': '0',  # ADD DL,DL => 0
-    '2 210': '1',  # ADD DL,DL => 1
+    # '0 228': '0',  # ADD AH,AH => 0
+    # '2 228': '1',  # ADD AH,AH => 1
+    # '0 252': '0',  # ADD AH,BH => 0
+    # '2 231': '1',  # ADD AH,BH => 1
+    # '0 236': '0',  # ADD AH,CH => 0
+    # '2 229': '1',  # ADD AH,CH => 1
+    # '0 244': '0',  # ADD AH,DH => 0
+    # '2 230': '1',  # ADD AH,DH => 1
+    # '0 231': '0',  # ADD BH,AH => 0
+    # '2 252': '1',  # ADD BH,AH => 1
+    # '0 255': '0',  # ADD BH,BH => 0
+    # '2 255': '1',  # ADD BH,BH => 1
+    # '0 239': '0',  # ADD BH,CH => 0
+    # '2 253': '1',  # ADD BH,CH => 1
+    # '0 247': '0',  # ADD BH,DH => 0
+    # '2 254': '1',  # ADD BH,DH => 1
+    # '0 229': '0',  # ADD CH,AH => 0
+    # '2 236': '1',  # ADD CH,AH => 1
+    # '0 253': '0',  # ADD CH,BH => 0
+    # '2 239': '1',  # ADD CH,BH => 1
+    # '0 237': '0',  # ADD CH,CH => 0
+    # '2 237': '1',  # ADD CH,CH => 1
+    # '0 245': '0',  # ADD CH,DH => 0
+    # '2 238': '1',  # ADD CH,DH => 1
+    # '0 230': '0',  # ADD DH,AH => 0
+    # '2 244': '1',  # ADD DH,AH => 1
+    # '0 254': '0',  # ADD DH,BH => 0
+    # '2 247': '1',  # ADD DH,BH => 1
+    # '0 238': '0',  # ADD DH,CH => 0
+    # '2 245': '1',  # ADD DH,CH => 1
+    # '0 246': '0',  # ADD DH,DH => 0
+    # '2 246': '1',  # ADD DH,DH => 1
+    # '0 192': '0',  # ADD AL,AL => 0
+    # '2 192': '1',  # ADD AL,AL => 1
+    # '0 216': '0',  # ADD AL,BL => 0
+    # '2 195': '1',  # ADD AL,BL => 1
+    # '0 200': '0',  # ADD AL,CL => 0
+    # '2 193': '1',  # ADD AL,CL => 1
+    # '0 208': '0',  # ADD AL,DL => 0
+    # '2 194': '1',  # ADD AL,DL => 1
+    # '0 195': '0',  # ADD BL,AL => 0
+    # '2 216': '1',  # ADD BL,AL => 1
+    # '0 219': '0',  # ADD BL,BL => 0
+    # '2 219': '1',  # ADD BL,BL => 1
+    # '0 203': '0',  # ADD BL,CL => 0
+    # '2 217': '1',  # ADD BL,CL => 1
+    # '0 211': '0',  # ADD BL,DL => 0
+    # '2 218': '1',  # ADD BL,DL => 1
+    # '0 193': '0',  # ADD CL,AL => 0
+    # '2 200': '1',  # ADD CL,AL => 1
+    # '0 217': '0',  # ADD CL,BL => 0
+    # '2 203': '1',  # ADD CL,BL => 1
+    # '0 201': '0',  # ADD CL,CL => 0
+    # '2 201': '1',  # ADD CL,CL => 1
+    # '0 209': '0',  # ADD CL,DL => 0
+    # '2 202': '1',  # ADD CL,DL => 1
+    # '0 194': '0',  # ADD DL,AL => 0
+    # '2 208': '1',  # ADD DL,AL => 1
+    # '0 218': '0',  # ADD DL,BL => 0
+    # '2 211': '1',  # ADD DL,BL => 1
+    # '0 202': '0',  # ADD DL,CL => 0
+    # '2 209': '1',  # ADD DL,CL => 1
+    # '0 210': '0',  # ADD DL,DL => 0
+    # '2 210': '1',  # ADD DL,DL => 1
     '17 192': '0',  # ADC EAX,EAX => 0
     '19 192': '1',  # ADC EAX,EAX => 1
     '17 216': '0',  # ADC EAX,EBX => 0
