@@ -162,7 +162,7 @@ def modify_buffer(buffer, binary_data, offsets_list):
         exit(1)
 
     # print(f"Start offset: {int(start_binary,2)}")
-    print(f"End offset: {int(end_binary, 2)}")
+    # print(f"End offset: {int(end_binary, 2)}")
     # Concatenate binary end mark with binary data
     full_binary_data = end_binary + binary_data
     # Decode 'full_binary_data' within executable file
