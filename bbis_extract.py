@@ -33,15 +33,10 @@ def extract_binary_data(buffer,offsets):
         # Current offset
         offset = offsets[i]
         opcode = f"{buffer[offset]} {buffer[offset+1]}"
-        print(f"Offset:{offset}; opcode:{opcode}")
+        # print(f"Offset:{offset}; opcode:{opcode}")
         if opcode in extraction_opcode_map:
-            # # If opcode in map
-            # if len(start) < 16:
-            #     # If start isn't 16 bits yet append bit to start
-            #     start += get_byte_conversion(opcode)
-            # If start is 16 bits already then append bit to end
             end += get_byte_conversion(opcode)
-            used_offsets.append(offset)
+            # used_offsets.append(offset)
         # Increase 'i' to next offset in 'offsets'
         i += 1
 
@@ -51,17 +46,17 @@ def extract_binary_data(buffer,offsets):
     offset = offsets[i]
     while offset <= end:
         opcode = f"{buffer[offset]} {buffer[offset+1]}"
-        print(f"Offset:{offset}; opcode:{opcode}")
+        # print(f"Offset:{offset}; opcode:{opcode}")
         if opcode in extraction_opcode_map:
             binary_data += get_byte_conversion(opcode)
-            used_offsets.append(offset)
+            # used_offsets.append(offset)
 
         i += 1
         offset = offsets[i]
 
-    with open("extraction-offsets.txt","w") as file:
-        for offset in offsets:
-            file.write(f"{offset}\n")
+    # with open("extraction-offsets.txt","w") as file:
+    #     for offset in offsets:
+    #         file.write(f"{offset}\n")
 
     return binary_data
 
