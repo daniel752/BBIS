@@ -13,7 +13,7 @@ def get_arguments_cli():
     """Gets user input from CLI."""
     parser = argparse.ArgumentParser(prog='bbis_extract.py',description='Extract a file hidden with bbis_hide.py within executable.')
     parser.add_argument('-e','--executable',type=str,required=True,help='Path to executable for extraction.')
-    parser.add_argument('-o','--output',type=str,required=False,help='Name of output file after extraction.')
+    parser.add_argument('-o','--output',type=str,required=False,help='Output path for output file after extraction.')
     return parser.parse_args()
 
 
@@ -72,10 +72,12 @@ def get_file_type(file_binary):
     return file_type
 
 
-def write_file(file_binary,file_name,file_type):
+def write_file(file_binary,file_path,file_type):
     name = f"output-file.{file_type}"
-    if file_name:
-        name = f"{file_name}.{file_type}"
+    if file_path:
+        if file_path[-1] == '/':
+            file_path = file_path[0:-1]
+        name = f"{file_path}/output-file.{file_type}"
     with open(name,"wb") as file:
         file.write(file_binary)
 
@@ -94,6 +96,6 @@ if __name__ == '__main__':
     # print(f"Extracted binary data:{binary_data}")
     file_binary = convert_binary_to_file(binary_data)
     file_type = get_file_type(file_binary)
-    file_name = args.output
-    write_file(file_binary,file_name,file_type)
+    output_path = args.output
+    write_file(file_binary,output_path,file_type)
     clear_logs(os.path.basename(executable))

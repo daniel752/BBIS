@@ -20,7 +20,7 @@ def get_arguments_cli():
     # parser.add_argument('-a', '--action', type=str, required=True, help='-a or --action [=decode,=extract] (choose whether you want to decode or extract data)')
     parser.add_argument('-d', '--data', type=str, required=True, help='Path to data (file) to hide in executable')
     parser.add_argument('-e', '--executable', type=str, required=True, help='Path to executable to hide file within')
-    parser.add_argument('-p', '--path', type=str, required=False, help='Path of where to put te modified executable')
+    parser.add_argument('-o', '--output_path', type=str, required=False, help='Output path for modified executable')
     return parser.parse_args()
 
 
@@ -40,21 +40,27 @@ def get_executable_binary(executable):
 
 
 def get_executable_object_data(executable):
-    # Get executable name from path
-    exe_name = os.path.basename(executable).split('.')[0]
-    # Disassemble .EXE file's code section with intel x8086 mnemonics and save output
-    os.system(f'objdump -d -M intel {executable} > {exe_name}_dump.txt')
-    # Get info about object code - code section's offset,size,virtual address
-    os.system(f'objdump -h {executable} > {exe_name}_code_offset.txt')
-    # Read object code's disassembly to 'dump'
-    dump = open(f'{exe_name}_dump.txt', 'r').readlines()[7:]
-    # Read object code's information to 'info'
-    info = open(f'{exe_name}_code_offset.txt', 'r').readlines()[5:6]
-    # Converting 'info' from list to str
-    info = str(info[0])
-    virtual_offset = info[28:36]
-    code_offset = info[48:56]
-    dump = [x.split('\t') for x in dump]
+    try:
+        # Get executable name from path
+        exe_name = os.path.basename(executable).split('.')[0]
+        # Disassemble .EXE file's code section with intel x8086 mnemonics and save output
+        os.system(f'objdump -d -M intel {executable} > {exe_name}_dump.txt')
+        # Get info about object code - code section's offset,size,virtual address
+        os.system(f'objdump -h {executable} > {exe_name}_code_offset.txt')
+        # Read object code's disassembly to 'dump'
+        dump = open(f'{exe_name}_dump.txt', 'r').readlines()[7:]
+        # Read object code's information to 'info'
+        info = open(f'{exe_name}_code_offset.txt', 'r').readlines()[5:6]
+        # Converting 'info' from list to str
+        info = str(info[0])
+        virtual_offset = info[28:36]
+        code_offset = info[48:56]
+        dump = [x.split('\t') for x in dump]
+    except Exception:
+        print(f"Objdump unable to disassemble {executable}")
+        print("Program exits")
+        clear_logs(executable)
+        exit(1)
     return (dump, virtual_offset, code_offset)
 
 
@@ -145,8 +151,7 @@ def write_buffer(buffer, executable, path):
     if path:
         if path[-1] == '/':
             path = path[0:-1]
-        executable = f"{path}/{executable}"
-    with open(f"{executable}", "wb") as file:
+    with open(f"{path}/{executable}", "wb") as file:
         file.write(buffer)
 
 
@@ -185,14 +190,12 @@ def clear_logs(exe_name):
 if __name__ == '__main__':
     # Get arguments from CLI
     args = get_arguments_cli()
-    # # Action to perform (to hide or extract data)
-    # action = args.action
     # Path to file for hiding or extracting
     data = args.data
     # Path to executable file
     executable = args.executable
     # Path of modified executable
-    path = args.path
+    output_path = args.output_path
     # Get targeted mnemonics offsets from executable's object data
     offsets_list = get_executable_offsets(executable)
     # Get file's binary data
@@ -204,6 +207,6 @@ if __name__ == '__main__':
     # Modify buffer according to 'binary_data'
     buffer = modify_buffer(buffer, binary_data, offsets_list, exe_name)
     # Write modified buffer back to hard-disk (looks exactly like original)
-    write_buffer(buffer, exe_name, path)
+    write_buffer(buffer, exe_name, output_path)
     # Delete executable's object data logs
     clear_logs(exe_name)
