@@ -150,8 +150,10 @@ def write_buffer(buffer, executable, path):
     """Write buffer back to hard-disk (physical memory) in current directory"""
     if path:
         if path[-1] == '/':
-            path = path[0:-1]
-    with open(f"{path}/{executable}", "wb") as file:
+            path = f"{path[0:-1]}/{executable}"
+    else:
+        path = f"{executable}"
+    with open(path, "wb") as file:
         file.write(buffer)
 
 
